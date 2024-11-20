@@ -25,18 +25,24 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             Column(
               children: <Widget>[
-                Image.asset(
-                  'assets/LogoSwiftCart.png',
-                  height: 100,
-                  width: 100,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0),
+                  child: Image.asset(
+                    'assets/LogoSwiftCart.png',
+                    height: 100,
+                    width: 100,
+                  ),
                 ),
-                Text(
-                  'SwiftCart',
-                  style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.w700,
-                      color: Theme.of(context).colorScheme.primary),
-                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 32.0),
+                  child: Text(
+                    'SwiftCart',
+                    style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.w700,
+                        color: Theme.of(context).colorScheme.primary),
+                  ),
+                )
               ],
             ),
             Padding(
@@ -56,43 +62,41 @@ class _LoginPageState extends State<LoginPage> {
                     )),
               ),
             ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(
-                  filled: true,
-                  labelText: 'Password',
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black26, width: 2.0),
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black26, width: 2.0),
-                    borderRadius: BorderRadius.circular(12.0),
-                  )),
-              obscureText: true,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16.0),
+              child: TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                    filled: true,
+                    labelText: 'Password',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black26, width: 2.0),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black26, width: 2.0),
+                      borderRadius: BorderRadius.circular(12.0),
+                    )),
+                obscureText: true,
+              ),
             ),
             OverflowBar(
               alignment: MainAxisAlignment.end,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
-                  child: TextButton(
-                      onPressed: () {
-                        _usernameController.clear();
-                        _passwordController.clear();
-                      },
-                      child: const Text('CANCEL')),
-                ),
-                Padding(
-                    padding: const EdgeInsets.only(top: 16.0),
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const DashboardPage()));
-                        },
-                        child: const Text('NEXT'))),
+                TextButton(
+                    onPressed: () {
+                      _usernameController.clear();
+                      _passwordController.clear();
+                    },
+                    child: const Text('CANCEL')),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const DashboardPage()));
+                    },
+                    child: const Text('NEXT')),
               ],
             )
           ],
