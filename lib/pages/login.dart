@@ -37,13 +37,6 @@ class _LoginPageState extends State<LoginPage> {
                     height: 80,
                     width: 350,
                   ),
-                  // child: Text(
-                  //   'SwiftCart',
-                  //   style: TextStyle(
-                  //       fontSize: 50,
-                  //       fontWeight: FontWeight.w700,
-                  //       color: Theme.of(context).colorScheme.primary),
-                  // ),
                 )
               ],
             ),

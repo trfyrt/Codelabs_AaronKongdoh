@@ -1,4 +1,4 @@
-import 'package:codelabs_101/pages/login.dart';
+import 'package:codelabs_101/pages/onboard1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 250, 210, 125)),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      home: OnBoardPage1(),
     );
   }
 }
