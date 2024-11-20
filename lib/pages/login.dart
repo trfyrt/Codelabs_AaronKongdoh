@@ -18,30 +18,32 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(248, 231, 231, 231),
+      backgroundColor: const Color.fromARGB(248, 248, 248, 248),
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(vertical: 150.0, horizontal: 50),
+          padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 50),
           children: <Widget>[
             Column(
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: Image.asset(
-                    'assets/LogoSwiftCart.png',
-                    height: 100,
-                    width: 100,
-                  ),
+                Image.asset(
+                  'assets/LogoSwiftCart2.png',
+                  height: 250,
+                  width: 250,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 32.0),
-                  child: Text(
-                    'SwiftCart',
-                    style: TextStyle(
-                        fontSize: 50,
-                        fontWeight: FontWeight.w700,
-                        color: Theme.of(context).colorScheme.primary),
+                  child: Image.asset(
+                    'assets/SwiftCartText.png',
+                    height: 80,
+                    width: 350,
                   ),
+                  // child: Text(
+                  //   'SwiftCart',
+                  //   style: TextStyle(
+                  //       fontSize: 50,
+                  //       fontWeight: FontWeight.w700,
+                  //       color: Theme.of(context).colorScheme.primary),
+                  // ),
                 )
               ],
             ),
@@ -53,13 +55,18 @@ class _LoginPageState extends State<LoginPage> {
                     filled: true,
                     labelText: 'Username',
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black26, width: 2.0),
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.primary,
+                          width: 2.0),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black26, width: 2.0),
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.primary,
+                          width: 2.0),
                       borderRadius: BorderRadius.circular(12.0),
-                    )),
+                    ),
+                    prefixIcon: const Icon(Icons.person)),
               ),
             ),
             Padding(
@@ -67,16 +74,22 @@ class _LoginPageState extends State<LoginPage> {
               child: TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                    filled: true,
-                    labelText: 'Password',
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black26, width: 2.0),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black26, width: 2.0),
-                      borderRadius: BorderRadius.circular(12.0),
-                    )),
+                  filled: true,
+                  labelText: 'Password',
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.primary,
+                        width: 2.0),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.primary,
+                        width: 2.0),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  prefixIcon: const Icon(Icons.lock),
+                ),
                 obscureText: true,
               ),
             ),
