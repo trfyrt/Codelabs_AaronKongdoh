@@ -18,49 +18,49 @@ class _DashboardPageState extends State<DashboardPage> {
     {
       'image': 'mie.png',
       'title': 'Mie Instant',
-      'subtitle': 'Price: Rp. 3.000',
+      'subtitle': 'Rp. 3.000',
       'rating': '4.4'
     },
     {
       'image': 'curry.png',
       'title': 'Curry Instant',
-      'subtitle': 'Price: Rp. 32.000',
+      'subtitle': 'Rp. 32.000',
       'rating': '4.2'
     },
     {
       'image': 'nugget.png',
       'title': 'Nugget Instant',
-      'subtitle': 'Price: Rp. 18.000',
+      'subtitle': 'Rp. 18.000',
       'rating': '4.5'
     },
     {
       'image': 'sosis.png',
       'title': 'Sosis Instant',
-      'subtitle': 'Price: Rp. 12.000',
+      'subtitle': 'Rp. 12.000',
       'rating': '3.9'
     },
     {
       'image': 'susu.png',
       'title': 'Susu Instant',
-      'subtitle': 'Price: Rp. 14.500',
+      'subtitle': 'Rp. 14.500',
       'rating': '5.0'
     },
     {
       'image': 'nasi.png',
       'title': 'Nasi Instant',
-      'subtitle': 'Price: Rp. 36.000',
+      'subtitle': 'Rp. 36.000',
       'rating': '4.6'
     },
     {
       'image': 'jambu.png',
       'title': 'Jambu Instant',
-      'subtitle': 'Price: Rp. 3.700',
+      'subtitle': 'Rp. 3.700',
       'rating': '4.8'
     },
     {
       'image': 'loading.json',
       'title': 'Loading',
-      'subtitle': 'Price: Rp. -0',
+      'subtitle': 'Rp. -0',
       'rating': '0.0'
     },
   ];
@@ -128,7 +128,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     Padding(
                       padding: EdgeInsets.only(top: 8.0),
                       child: Text(
-                        'Rp. 3.000',
+                        product['subtitle'],
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).colorScheme.primary,
