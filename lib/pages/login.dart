@@ -26,14 +26,14 @@ class _LoginPageState extends State<LoginPage> {
             Column(
               children: <Widget>[
                 Image.asset(
-                  'assets/LogoSwiftCart2.png',
+                  'LogoSwiftCart2.png',
                   height: 250,
                   width: 250,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 32.0),
                   child: Image.asset(
-                    'assets/SwiftCartText.png',
+                    'SwiftCartText.png',
                     height: 80,
                     width: 350,
                   ),
@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const DashboardPage()));
+                              builder: (context) => DashboardPage()));
                     },
                     child: const Text('NEXT')),
               ],

@@ -5,14 +5,146 @@ import 'package:lottie/lottie.dart';
 // const Color.fromARGB(250, 210, 125, 1)
 // const Color.fromARGB(250, 210, 125, 1)
 // const Color.fromARGB(250, 210, 125, 1)
+
 class DashboardPage extends StatefulWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+  DashboardPage({Key? key}) : super(key: key);
 
   @override
   _DashboardPageState createState() => _DashboardPageState();
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+  final List<Map<String, dynamic>> products = [
+    {
+      'image': 'mie.png',
+      'title': 'Mie Instant',
+      'subtitle': 'Price: Rp. 3.000',
+      'rating': '4.4'
+    },
+    {
+      'image': 'curry.png',
+      'title': 'Curry Instant',
+      'subtitle': 'Price: Rp. 32.000',
+      'rating': '4.2'
+    },
+    {
+      'image': 'nugget.png',
+      'title': 'Nugget Instant',
+      'subtitle': 'Price: Rp. 18.000',
+      'rating': '4.5'
+    },
+    {
+      'image': 'sosis.png',
+      'title': 'Sosis Instant',
+      'subtitle': 'Price: Rp. 12.000',
+      'rating': '3.9'
+    },
+    {
+      'image': 'susu.png',
+      'title': 'Susu Instant',
+      'subtitle': 'Price: Rp. 14.500',
+      'rating': '5.0'
+    },
+    {
+      'image': 'nasi.png',
+      'title': 'Nasi Instant',
+      'subtitle': 'Price: Rp. 36.000',
+      'rating': '4.6'
+    },
+    {
+      'image': 'jambu.png',
+      'title': 'Jambu Instant',
+      'subtitle': 'Price: Rp. 3.700',
+      'rating': '4.8'
+    },
+    {
+      'image': 'loading.json',
+      'title': 'Loading',
+      'subtitle': 'Price: Rp. -0',
+      'rating': '0.0'
+    },
+  ];
+
+  List<InkWell> _buildGridCards(BuildContext context) {
+    return products.map((product) {
+      return InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductDetailPage(product: product),
+            ),
+          );
+        },
+        child: Card(
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 18.0 / 11.0,
+                child: product['image'].endsWith('.png')
+                    ? Image.asset(
+                        product['image'],
+                        fit: BoxFit.cover,
+                      )
+                    : Lottie.asset(
+                        product['image'],
+                      ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(top: 4.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            product['title'],
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 16),
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                              Text(
+                                product['rating'],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color:
+                                        Theme.of(context).colorScheme.primary),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        'Rp. 3.000',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: 16),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,76 +191,7 @@ class _DashboardPageState extends State<DashboardPage> {
         crossAxisCount: 2,
         padding: const EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
-        children: <Widget>[
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ProductDetailPage()));
-            },
-            child: Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 18.0 / 11.0,
-                    child: Lottie.asset('assets/loading.json'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(top: 4.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Mie Instant',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600, fontSize: 16),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                  ),
-                                  Text(
-                                    '4.4',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 8.0),
-                          child: Text(
-                            'Rp. 3.000',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Theme.of(context).colorScheme.primary,
-                                fontSize: 16),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+        children: _buildGridCards(context),
       ),
     );
   }

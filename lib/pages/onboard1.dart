@@ -35,7 +35,7 @@ class _OnBoardPage1State extends State<OnBoardPage1> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Image.asset(
-                "assets/LogoSwiftCart2.png",
+                "LogoSwiftCart2.png",
                 height: 250,
               ),
             ),

@@ -62,11 +62,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets\LogoSwiftCart2.png
-    - assets\SwiftCartText.png
-    - assets\orangRelax.svg
-    - assets\orangDeliveries.svg
-    - assets\loading.json
+    - assets/
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

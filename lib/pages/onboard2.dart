@@ -36,7 +36,7 @@ class _OnBoardPage2State extends State<OnBoardPage2> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: SvgPicture.asset(
-                "assets/orangRelax.svg",
+                "orangRelax.svg",
                 height: 250,
               ),
             ),

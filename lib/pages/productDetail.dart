@@ -1,65 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
-class ProductDetailPage extends StatefulWidget {
-  const ProductDetailPage({Key? key}) : super(key: key);
+class ProductDetailPage extends StatelessWidget {
+  final Map<String, dynamic> product;
 
-  @override
-  _ProductDetailPageState createState() => _ProductDetailPageState();
-}
+  const ProductDetailPage({Key? key, required this.product}) : super(key: key);
 
-class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        foregroundColor: Theme.of(context).colorScheme.primary,
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        foregroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          'SwiftCart',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-          ),
+          product['title'],
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 50),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset(
-                "assets/LogoSwiftCart2.png", // Path ke ilustrasi
-                height: 250,
+            // Display product image
+            Center(
+              child: product['image'].endsWith('.png')
+                  ? Image.asset(
+                      product['image'],
+                      fit: BoxFit.cover,
+                    )
+                  : Lottie.asset(
+                      product['image'],
+                    ),
+            ),
+            const SizedBox(height: 16.0),
+            Text(
+              product['title'],
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Text(
-                "Product 1",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                textAlign: TextAlign.center,
-              ),
+            const SizedBox(height: 8.0),
+            Text(
+              product['subtitle'],
+              style: TextStyle(fontSize: 20.0, color: Colors.grey[600]),
             ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Text(
-                "Belanja online kini lebih cepat dan mudah. Temukan kebutuhan Anda dengan sekali sentuh, tanpa ribet.",
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  color: Colors.black54,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
+            const SizedBox(height: 16.0),
           ],
         ),
       ),
