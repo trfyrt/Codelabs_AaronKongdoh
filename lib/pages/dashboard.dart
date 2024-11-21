@@ -1,3 +1,4 @@
+import 'package:codelabs_101/pages/login.dart';
 import 'package:codelabs_101/pages/productDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -152,14 +153,16 @@ class _DashboardPageState extends State<DashboardPage> {
       appBar: AppBar(
         foregroundColor: Theme.of(context).colorScheme.primary,
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        leading: IconButton(
-            onPressed: () {
-              print('Menu Button');
-            },
-            icon: Icon(
-              Icons.menu,
-              semanticLabel: 'Menu',
-            )),
+        leading: Builder(
+          builder: (BuildContext context) => IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(
+                Icons.menu,
+                semanticLabel: 'Menu',
+              )),
+        ),
         title: Text(
           'SwiftCart',
           style: TextStyle(
@@ -186,6 +189,74 @@ class _DashboardPageState extends State<DashboardPage> {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primaryContainer,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'SwiftCart',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Text(
+                    'Kecepatan dalam Genggaman',
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+                print('Home menu selected');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.shopping_cart),
+              title: Text('Cart'),
+              onTap: () {
+                Navigator.pop(context);
+                print('Cart menu selected');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+                print('Settings menu selected');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => LoginPage()));
+              },
+            ),
+          ],
+        ),
       ),
       body: GridView.count(
         crossAxisCount: 2,
