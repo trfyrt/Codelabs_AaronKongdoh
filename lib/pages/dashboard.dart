@@ -16,10 +16,10 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(248, 248, 248, 248),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+        foregroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         leading: IconButton(
             onPressed: () {
               print('Menu Button');
@@ -77,203 +77,55 @@ class _DashboardPageState extends State<DashboardPage> {
                     child: Lottie.asset('assets/loading.json'),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                    padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          'Ini apa ya kak',
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                        Padding(
+                          padding: EdgeInsets.only(top: 4.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Mie Instant',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 16),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                  ),
+                                  Text(
+                                    '4.4',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                        const SizedBox(height: 8.0),
-                        Text('Rp190.000.000'),
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'Rp. 3.000',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 16),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Lottie.asset('assets/loading.json'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Ini apa ya kak',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text('Rp190.000.000'),
-                    ],
-                  ),
-                ),
-              ],
             ),
           ),
         ],

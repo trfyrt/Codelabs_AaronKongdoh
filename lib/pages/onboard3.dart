@@ -16,7 +16,7 @@ class _OnBoardPage3State extends State<OnBoardPage3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(248, 248, 248, 248),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 50),
@@ -36,7 +36,7 @@ class _OnBoardPage3State extends State<OnBoardPage3> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: SvgPicture.asset(
-                "assets/orangDeliveries.svg", // Path ke ilustrasi
+                "assets/orangDeliveries.svg",
                 height: 250,
               ),
             ),
@@ -54,15 +54,11 @@ class _OnBoardPage3State extends State<OnBoardPage3> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Aksi saat tombol ditekan
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const LoginPage())); // Navigasi ke halaman berikutnya
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()));
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFFAD27D), // Warna kuning pastel
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
