@@ -1,6 +1,6 @@
 import 'package:codelabs_101/pages/login.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 // const Color.fromARGB(250, 210, 125, 1)
 // const Color.fromARGB(250, 210, 125, 1)
@@ -35,9 +35,9 @@ class _OnBoardPage3State extends State<OnBoardPage3> {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: SvgPicture.asset(
-                "orangDeliveries.svg",
-                height: 250,
+              child: Lottie.asset(
+                "orangBelanja.json",
+                height: 280,
               ),
             ),
             Padding(
