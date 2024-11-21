@@ -3,10 +3,6 @@ import 'package:codelabs_101/pages/productDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
-
 class DashboardPage extends StatefulWidget {
   DashboardPage({Key? key}) : super(key: key);
 

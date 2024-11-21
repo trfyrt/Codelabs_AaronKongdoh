@@ -22,7 +22,6 @@ class ProductDetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // Display product image
             Center(
               child: product['image'].endsWith('.png')
                   ? Image.asset(

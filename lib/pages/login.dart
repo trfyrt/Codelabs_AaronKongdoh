@@ -1,9 +1,6 @@
 import 'package:codelabs_101/pages/dashboard.dart';
 import 'package:flutter/material.dart';
 
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 

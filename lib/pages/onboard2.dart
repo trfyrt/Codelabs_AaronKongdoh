@@ -2,9 +2,6 @@ import 'package:codelabs_101/pages/onboard3.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
-// const Color.fromARGB(250, 210, 125, 1)
 class OnBoardPage2 extends StatefulWidget {
   const OnBoardPage2({Key? key}) : super(key: key);
 
